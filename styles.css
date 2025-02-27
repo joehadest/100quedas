@@ -6,13 +6,9 @@
 
 /* Estilos personalizados */
 .custom-hero {
-    min-height: 600px;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    margin-top: -56px;
-    padding-top: 56px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    position: relative;
 }
 
 /* Estilos para badges de tecnologia */
@@ -188,9 +184,386 @@
     cursor: text;
 }
 
+/* Hero Section Styles */
+.custom-hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    position: relative;
+}
+
+.z-2 {
+    z-index: 2;
+}
+
+/* Texto gradiente */
+.text-gradient {
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Animações de texto */
+.animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+/* Botões animados */
+.pulse-button {
+    animation: pulse 2s infinite;
+    position: relative;
+}
+
+.glow-button {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.glow-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.2);
+    transform: rotate(45deg);
+    animation: glow 3s infinite;
+}
+
+/* Janela de código */
+.code-window {
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+}
+
+.code-header {
+    background: #333;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.code-content {
+    padding: 20px;
+    font-family: 'Consolas', monospace;
+    color: #fff;
+}
+
+.code-comment {
+    color: #6a9955;
+}
+
+/* Animação de digitação */
+.typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    animation: typing 3s steps(40, end);
+}
+
+/* Elemento flutuante */
+.floating-element {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Background animado */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(46,204,113,0.1), rgba(52,152,219,0.1));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    animation: bgAnimation 15s ease infinite;
+}
+
+/* Seção Serviços */
+#servicos {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#servicos .service-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#servicos .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+}
+
+#servicos .service-card i {
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+}
+
+/* Seção Portfólio */
+#portfolio {
+    position: relative;
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.portfolio-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(46,204,113,0.2), rgba(52,152,219,0.2));
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-card:hover::before {
+    opacity: 1;
+}
+
+/* Seção Pacotes */
+#pacotes {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#pacotes .card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#pacotes .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+}
+
+.highlight-card {
+    position: relative;
+    background: linear-gradient(45deg, rgba(46,204,113,0.05), rgba(52,152,219,0.05));
+}
+
+.highlight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Botões animados em todo o site */
+.btn-primary {
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* Botões da Hero Section - Melhorar área clicável */
+.custom-hero .btn {
+    min-width: 180px;
+    min-height: 55px;
+    padding: 12px 24px;
+    font-weight: 600;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+/* Garantir que os botões tenham área clicável em toda sua superfície */
+.pulse-button, .glow-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.pulse-button::before, .glow-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* Botões da Hero Section - Ajuste para garantir clicabilidade */
+.custom-hero .btn {
+    min-width: 180px;
+    min-height: 55px;
+    padding: 12px 24px;
+    font-weight: 600;
+    margin: 0 5px;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Limpar efeitos que possam interferir na clicabilidade */
+.custom-hero .btn::before,
+.custom-hero .btn::after {
+    z-index: -1; /* Garantir que os pseudo-elementos não interfiram com cliques */
+}
+
+.custom-hero .btn-primary {
+    background: linear-gradient(45deg, #2ecc71, #3498db);
+    border: none;
+    animation: pulse 2s infinite;
+}
+
+.custom-hero .btn-outline-light {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Remover classes que possam interferir */
+.custom-hero .pulse-button,
+.custom-hero .glow-button {
+    position: static; /* Reset posicionamento que pode causar problemas */
+}
+
+/* Animações globais */
+[class*="animate-"] {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0% { transform: rotate(45deg) translate(-100%, -100%); }
+    100% { transform: rotate(45deg) translate(100%, 100%); }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes bgAnimation {
+    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+    50% { clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); }
+}
+
+@keyframes fadeInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 /* Media queries */
 @media (max-width: 768px) {
     .custom-hero {
-        min-height: 400px;
+        min-height: 100vh;
+        padding: 4rem 0;
     }
 }

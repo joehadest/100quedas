@@ -11,49 +11,66 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-code-slash"></i> 100 Quedas
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link"
-                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'}); return false;"
-                            href="#portfolio">Portfólio</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            onclick="document.getElementById('servicos').scrollIntoView({behavior: 'smooth'}); return false;"
-                            href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth'}); return false;"
-                            href="#pacotes">Pacotes</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
-    <header class="custom-hero d-flex align-items-center text-white">
-        <div class="container text-center py-5">
-            <h1 class="display-1 fw-bold mb-4">100 Quedas</h1>
-            <p class="lead mb-4">Desenvolvimento Web Profissional por Joe</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'}); return false;"
-                    href="#portfolio" class="btn btn-outline-light btn-lg">Ver Trabalhos</a>
-                <a onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth'}); return false;"
-                    href="#contato" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
+    <header class="custom-hero d-flex align-items-center text-white position-relative overflow-hidden">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                    <h1 class="display-1 fw-bold mb-4 animate-text">
+                        Transforme sua <span class="text-gradient">Presença Digital</span>
+                    </h1>
+                    <p class="lead mb-4 animate-text delay-1">
+                        Desenvolvimento web profissional que combina design moderno com
+                        tecnologia de ponta para criar experiências únicas
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start animate-text delay-2">
+                        <button
+                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'})"
+                            class="btn btn-outline-light btn-lg">
+                            Ver Projetos
+                        </button>
+                        <button
+                            onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'})"
+                            class="btn btn-primary btn-lg">
+                            Começar Agora
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="position-relative floating-element">
+                        <div class="code-window shadow-lg">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="code-content">
+                                <pre class="typing-animation">
+<span class="code-comment">// Criando experiências incríveis</span>
+const site = new Website({
+    design: 'Moderno',
+    performance: 'Otimizada',
+    responsive: true,
+    features: [
+        'SEO Avançado',
+        'Design Único',
+        'Código Limpo'
+    ]
+});</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- Elementos de fundo animados -->
+            <div class="animated-bg"></div>
         </div>
     </header>
 
     <!-- Serviços -->
-    <section id="servicos" class="py-5 bg-light">
+    <section id="servicos" class="py-5 fade-in">
         <div class="container">
-            <h2 class="display-5 text-center mb-5">Nossos Serviços</h2>
+            <h2 class="display-5 text-center mb-5 animate-text">Nossos Serviços</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card service-card h-100 border-0 shadow-sm fade-in">
@@ -87,7 +104,7 @@
     </section>
 
     <!-- Portfólio -->
-    <section id="portfolio" class="py-5">
+    <section id="portfolio" class="py-5 fade-in">
         <div class="container">
             <h2 class="display-5 text-center mb-5">Demos</h2>
             <div class="row g-4 justify-content-center">
@@ -254,7 +271,7 @@
     </div>
 
     <!-- Pacotes -->
-    <section id="pacotes" class="py-5 bg-light">
+    <section id="pacotes" class="py-5 fade-in">
         <div class="container">
             <h2 class="display-5 text-center mb-5">Pacotes</h2>
             <div class="row g-4 justify-content-center">

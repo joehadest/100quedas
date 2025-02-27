@@ -1,24 +1,22 @@
-// Inicializar o Mercado Pago
-const mp = new MercadoPago('TEST-ed288066-ff52-4aa4-b486-c281db189ee9');
+// Inicializar o Mercado Pago com a Public Key de produção
+const mp = new MercadoPago('APP_USR-d2dff723-1894-4110-a5c9-8d02b557918b');
 
-async function gerarQRCodePix(valor, pacote) {
+async function gerarQRCodePix(pacote) {
     try {
         const response = await fetch('/criar-pix', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                valor: valor,
-                descricao: `Pacote ${pacote} - 100 Quedas Web`
-            })
+            body: JSON.stringify({ pacote })
         });
 
         const data = await response.json();
 
         // Exibir QR Code
         document.getElementById('qr-code').innerHTML = `
-            <img src="${data.qr_code_base64}" alt="QR Code PIX" class="img-fluid">
+            <img src="${data.qr_code_base64}" alt="QR Code PIX" class="img-fluid mb-3">
+            <p class="mb-2">Valor a pagar: R$ ${data.valor.toFixed(2)}</p>
         `;
 
         // Adicionar código PIX para copiar e colar
@@ -73,13 +71,8 @@ async function verificarStatusPagamento(pixId) {
 document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
     const pacote = params.get('pacote');
-    const valores = {
-        basico: 699,
-        profissional: 1499,
-        premium: 2499
-    };
 
-    if (pacote && valores[pacote]) {
-        gerarQRCodePix(valores[pacote], pacote);
+    if (pacote) {
+        gerarQRCodePix(pacote);
     }
 });
