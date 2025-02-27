@@ -1,0 +1,196 @@
+/* Variáveis personalizadas */
+:root {
+    --custom-primary: #0d6efd;
+    --custom-secondary: #0a58ca;
+}
+
+/* Estilos personalizados */
+.custom-hero {
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: -56px;
+    padding-top: 56px;
+}
+
+/* Estilos para badges de tecnologia */
+.badge {
+    font-weight: normal;
+    padding: 0.5em 0.8em;
+}
+
+/* Ajustes para o modal do projeto */
+.modal-body .list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.modal-body .list-group-item:first-child {
+    border-top: none;
+}
+
+.modal-body .list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Animações e transições */
+.portfolio-card {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Estilos para imagens do portfólio */
+.portfolio-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.portfolio-card:hover .card-img-top {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* Aspect ratio 16:9 */
+}
+
+.card-img-wrapper .card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Efeito de fade in para elementos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Social links */
+.social-link {
+    font-size: 1.5rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Estilos para os pacotes */
+#pacotes .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pacotes .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* Ribbon para pacote mais popular */
+.ribbon {
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    transform: rotate(45deg);
+    background: var(--custom-primary);
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Destaque para o pacote básico (substituindo o destaque anterior) */
+.highlight-card {
+    border: 2px solid var(--custom-primary) !important;
+    transform: scale(1.05);
+}
+
+.highlight-card:hover {
+    transform: scale(1.05) translateY(-10px) !important;
+}
+
+/* Atualizando a regra anterior que destacava o segundo card */
+#pacotes .card:nth-child(2) {
+    border: none !important;
+    transform: none;
+}
+
+#pacotes .card:nth-child(2):hover {
+    transform: translateY(-10px);
+}
+
+/* Estilos para formulários de pagamento */
+.payment-form {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.payment-form.active {
+    display: block;
+}
+
+/* Estilo para o input da chave PIX */
+.input-group .form-control[readonly] {
+    background-color: #fff;
+    cursor: text;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .custom-hero {
+        min-height: 400px;
+    }
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Quedas | Desenvolvimento Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-code-slash"></i> 100 Quedas
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link"
+                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'}); return false;"
+                            href="#portfolio">Portfólio</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            onclick="document.getElementById('servicos').scrollIntoView({behavior: 'smooth'}); return false;"
+                            href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth'}); return false;"
+                            href="#pacotes">Pacotes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="custom-hero d-flex align-items-center text-white">
+        <div class="container text-center py-5">
+            <h1 class="display-1 fw-bold mb-4">100 Quedas</h1>
+            <p class="lead mb-4">Desenvolvimento Web Profissional por Joe</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'}); return false;"
+                    href="#portfolio" class="btn btn-outline-light btn-lg">Ver Trabalhos</a>
+                <a onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth'}); return false;"
+                    href="#contato" class="btn btn-primary btn-lg">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 text-center mb-5">Nossos Serviços</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <i class="bi bi-laptop display-4 text-primary mb-3"></i>
+                            <h3 class="h4 card-title">Sites Responsivos</h3>
+                            <p class="card-text">Desenvolvimento de sites adaptados para todos os dispositivos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <i class="bi bi-shop display-4 text-primary mb-3"></i>
+                            <h3 class="h4 card-title">E-commerce</h3>
+                            <p class="card-text">Lojas virtuais completas e otimizadas para vendas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card h-100 border-0 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <i class="bi bi-graph-up display-4 text-primary mb-3"></i>
+                            <h3 class="h4 card-title">SEO</h3>
+                            <p class="card-text">Otimização para mecanismos de busca</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section id="portfolio" class="py-5">
+        <div class="container">
+            <h2 class="display-5 text-center mb-5">Demos</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6">
+                    <div class="card portfolio-card h-100 border-0 shadow-sm fade-in">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="./imgs/cardapio-digital.png" class="card-img-top" alt="Cardápio Digital"
+                                loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cardápio Digital</h5>
+                            <p class="card-text">Sistema completo de cardápio digital com autenticação de usuários e
+                                MongoDB</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">Node.js</span>
+                                <span class="badge bg-secondary me-1">Express</span>
+                                <span class="badge bg-success me-1">MongoDB</span>
+                                <span class="badge bg-info">RESTful API</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://cardapio-digital-teste.vercel.app/#" class="btn btn-outline-primary"
+                                    target="_blank">Ver Demo</a>
+                                <a href="#" class="btn btn-link text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#cardapioModal">
+                                    Detalhes <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card portfolio-card h-100 border-0 shadow-sm fade-in">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <img src="./imgs/barbearia-style.png" class="card-img-top" alt="Barbearia Style">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Barbearia Style</h5>
+                            <p class="card-text">Sistema de agendamento online para barbearia com integração WhatsApp
+                            </p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1">HTML5</span>
+                                <span class="badge bg-secondary me-1">CSS3</span>
+                                <span class="badge bg-success me-1">JavaScript</span>
+                                <span class="badge bg-info me-1">Bootstrap 5</span>
+                                <span class="badge bg-warning">WhatsApp API</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://barbeariastyle.netlify.app/" class="btn btn-outline-primary"
+                                    target="_blank">Ver Demo</a>
+                                <a href="#" class="btn btn-link text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#barbeariaModal">
+                                    Detalhes <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Cardápio Digital -->
+    <div class="modal fade" id="cardapioModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cardápio Digital - Detalhes do Projeto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Atualização do caminho da imagem no modal -->
+                    <img src="./imgs/cardapio-digital.png" class="img-fluid rounded mb-4"
+                        alt="Cardápio Digital Screenshot">
+                    <h6 class="fw-bold mb-3">Funcionalidades Principais</h6>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">✓ Registro e autenticação de usuários</li>
+                        <li class="list-group-item">✓ Integração com MongoDB</li>
+                        <li class="list-group-item">✓ API RESTful completa</li>
+                        <li class="list-group-item">✓ Sistema de segurança com Bcrypt</li>
+                        <li class="list-group-item">✓ Gerenciamento de cardápio digital</li>
+                    </ul>
+
+                    <h6 class="fw-bold mb-3">Tecnologias Utilizadas</h6>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Node.js</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Express</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>MongoDB</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Bcrypt</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>dotenv</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>API RESTful</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h6 class="fw-bold mb-3">Destaques do Projeto</h6>
+                    <p>Sistema completo para gerenciamento de cardápio digital com foco em segurança e usabilidade.
+                        Inclui autenticação de usuários, armazenamento seguro de senhas e interface intuitiva.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://cardapio-digital-teste.vercel.app/#" class="btn btn-primary"
+                        target="_blank">Visitar Demo</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Barbearia Style -->
+    <div class="modal fade" id="barbeariaModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Barbearia Style - Detalhes do Projeto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="imgs/barbearia.png" class="img-fluid rounded mb-4" alt="Barbearia Style">
+
+                    <h6 class="fw-bold mb-3">Funcionalidades Principais</h6>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">✓ Agendamento online de horários</li>
+                        <li class="list-group-item">✓ Seleção de profissionais e serviços</li>
+                        <li class="list-group-item">✓ Confirmação automática via WhatsApp</li>
+                        <li class="list-group-item">✓ Interface responsiva e moderna</li>
+                        <li class="list-group-item">✓ Gestão de disponibilidade</li>
+                    </ul>
+
+                    <h6 class="fw-bold mb-3">Tecnologias Utilizadas</h6>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>HTML5</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSS3</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Bootstrap 5</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>WhatsApp API</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Design Responsivo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h6 class="fw-bold mb-3">Destaques do Projeto</h6>
+                    <p>Sistema completo para agendamento de serviços de barbearia com foco na experiência do usuário.
+                        Inclui integração com WhatsApp para confirmações automáticas, interface moderna e totalmente
+                        responsiva.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://barbeariastyle.netlify.app/" class="btn btn-primary" target="_blank">Visitar
+                        Demo</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pacotes -->
+    <section id="pacotes" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="display-5 text-center mb-5">Pacotes</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Pacote Básico -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm highlight-card">
+                        <div class="card-body text-center position-relative">
+                            <div class="ribbon">Mais Popular</div>
+                            <h3 class="card-title">Básico</h3>
+                            <div class="display-6 my-3">R$ 699</div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Landing Page</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Responsivo</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>SEO Básico</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Entrega em 7 dias</li>
+                            </ul>
+                            <a href="pagamento.html?pacote=basico" class="btn btn-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacote Profissional (sem ribbon e destaque) -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="ribbon">Mais Popular</div>
+                            <h3 class="card-title">Profissional</h3>
+                            <div class="display-6 my-3">R$ 1.499</div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Até 5 Páginas</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Personalizado
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>SEO Avançado</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Formulário de Contato
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Integração com Redes
+                                    Sociais</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Entrega em 15 dias</li>
+                            </ul>
+                            <a href="pagamento.html?pacote=profissional" class="btn btn-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacote Premium -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Premium</h3>
+                            <div class="display-6 my-3">R$ 2.499</div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Até 10 Páginas</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Premium</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>SEO Completo</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Área Administrativa
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Blog Integrado</li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Sistema de Newsletter
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Entrega em 30 dias</li>
+                            </ul>
+                            <a href="pagamento.html?pacote=premium" class="btn btn-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5584998699449" class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h5>100 Quedas</h5>
+                    <p class="mb-0">Desenvolvimento Web Profissional</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-links">
+                        <a href="https://github.com/joehadest" class="text-white me-3 social-link" target="_blank">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/joel-melo-ab60b729b/" class="text-white me-3 social-link"
+                            target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                    <p class="mt-2 mb-0">&copy; 2024 100 Quedas. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
