@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>100 Quedas | Desenvolvimento Web</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -15,25 +15,24 @@
     <header class="custom-hero d-flex align-items-center text-white position-relative overflow-hidden">
         <div class="container position-relative z-2">
             <div class="row align-items-center">
-                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
-                    <h1 class="display-1 fw-bold mb-4 animate-text">
+                <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                    <h1 class="display-1 fw-bold mb-3 mb-md-4 animate-text">
                         Transforme sua <span class="text-gradient">Presença Digital</span>
                     </h1>
-                    <p class="lead mb-4 animate-text delay-1">
+                    <p class="lead mb-3 mb-md-4 animate-text delay-1">
                         Desenvolvimento web profissional que combina design moderno com
                         tecnologia de ponta para criar experiências únicas
                     </p>
-                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start animate-text delay-2">
-                        <button
-                            onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'})"
-                            class="btn btn-outline-light btn-lg">
+                    <div
+                        class="d-flex gap-3 justify-content-center justify-content-lg-start animate-text delay-2 position-relative cta-buttons">
+                        <a id="btn-ver-projetos" class="btn btn-outline-light btn-lg position-relative z-3"
+                            role="button" style="cursor: pointer; pointer-events: all;" href="#portfolio">
                             Ver Projetos
-                        </button>
-                        <button
-                            onclick="document.getElementById('pacotes').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'})"
-                            class="btn btn-primary btn-lg">
+                        </a>
+                        <a id="btn-comecar" class="btn btn-primary btn-lg position-relative z-3" role="button"
+                            style="cursor: pointer; pointer-events: all;" href="#pacotes">
                             Começar Agora
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
@@ -227,7 +226,7 @@ const site = new Website({
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="imgs/barbearia.png" class="img-fluid rounded mb-4" alt="Barbearia Style">
+                    <img src="./imgs/barbearia-style.png" class="img-fluid rounded mb-4" alt="Barbearia Style">
 
                     <h6 class="fw-bold mb-3">Funcionalidades Principais</h6>
                     <ul class="list-group list-group-flush mb-4">

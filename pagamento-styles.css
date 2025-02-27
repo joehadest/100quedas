@@ -1,0 +1,229 @@
+/* Estilos específicos para a página de pagamento */
+
+/* Estilo para o card do pacote selecionado */
+.selected-package-card {
+    border-top: 5px solid var(--custom-primary);
+}
+
+#pacoteInfo {
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+    border-left: 4px solid var(--custom-primary);
+    transition: all 0.3s ease;
+}
+
+/* Estilo para as tabs de pagamento */
+.nav-tabs .nav-link {
+    color: #495057;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--custom-primary);
+    border-bottom: 2px solid var(--custom-primary);
+    background: transparent;
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    border-bottom: 2px solid #ddd;
+}
+
+/* Estilo para o QR Code */
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 1rem;
+}
+
+.qr-code-img {
+    max-width: 100%;
+    border-radius: 0.5rem;
+}
+
+/* Estilo para botões de cópia */
+.pix-copy {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Estilo para o visual do cartão de crédito */
+.credit-card-visual {
+    height: 200px;
+    perspective: 1000px;
+}
+
+.credit-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.credit-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(135deg, #e6b400, #ffd700);
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.card-number {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    font-family: 'Courier New', monospace;
+}
+
+.card-holder,
+.card-expiry {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-holder {
+    flex: 3;
+}
+
+.card-expiry {
+    flex: 1;
+}
+
+.label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.value {
+    font-size: 1.1rem;
+}
+
+.card-holder,
+.card-expiry {
+    display: inline-block;
+}
+
+/* Estilos para opções de contato */
+.contact-option {
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contact-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para os itens de garantia */
+.guarantee-item {
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.guarantee-item:hover {
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+}
+
+/* Estilos para o accordion de FAQs */
+.accordion-item {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.02), rgba(52, 152, 219, 0.02));
+    border-radius: 10px !important;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--custom-primary);
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(46, 204, 113, 0.1);
+}
+
+.accordion-button::after {
+    background-size: 1.2rem;
+}
+
+/* Animação para loading */
+.loading-text {
+    animation: pulse 1.5s infinite;
+}
+
+/* Estilo para textos de confirmação */
+#copySuccess {
+    transition: all 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 576px) {
+    .credit-card-visual {
+        height: 180px;
+    }
+
+    .card-number {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .guarantee-item {
+        padding: 10px;
+    }
+
+    .guarantee-item i {
+        font-size: 1.5rem !important;
+    }
+
+    .qr-code-container {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-tabs .nav-link {
+        padding: 0.5rem 0.7rem;
+        font-size: 0.9rem;
+    }
+
+    .guarantee-item h5 {
+        font-size: 1rem;
+    }
+
+    .guarantee-item p {
+        font-size: 0.9rem;
+    }
+}

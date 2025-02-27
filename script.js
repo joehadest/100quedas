@@ -1,4 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Garantir que os botões sejam clicáveis - Implementação mais robusta
+    const btnVerProjetos = document.getElementById('btn-ver-projetos');
+    const btnComecar = document.getElementById('btn-comecar');
+
+    if (btnVerProjetos) {
+        btnVerProjetos.style.pointerEvents = 'auto';
+        btnVerProjetos.addEventListener('click', function (e) {
+            console.log('Botão Ver Projetos clicado');
+            scrollToSection('portfolio');
+        });
+    }
+
+    if (btnComecar) {
+        btnComecar.style.pointerEvents = 'auto';
+        btnComecar.addEventListener('click', function (e) {
+            console.log('Botão Começar Agora clicado');
+            scrollToSection('pacotes');
+        });
+    }
+
+    // Função para rolagem suave - Implementação única e simplificada
+    function scrollToSection(elementId) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            console.log(`Rolando para a seção: ${elementId}`);
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            console.error(`Elemento com ID ${elementId} não encontrado`);
+        }
+    }
+
     // Bootstrap form validation
     const forms = document.querySelectorAll('.needs-validation');
     if (forms.length > 0) {
@@ -122,7 +160,85 @@ document.addEventListener('DOMContentLoaded', function () {
             hero.appendChild(particle);
         }
     }
-});
+
+    // Detectar dispositivo móvel
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+    if (isMobile) {
+        console.log('Dispositivo móvel detectado');
+
+        // Ajustar comportamento para mobile
+        document.body.classList.add('mobile-device');
+
+        // Simplificar animações em dispositivos móveis para melhorar performance
+        const particles = document.querySelectorAll('.particle');
+        if (particles.length > 0) {
+            particles.forEach((particle, index) => {
+                // Reduzir quantidade de partículas
+                if (index > 15) {
+                    particle.remove();
+                }
+            });
+        }
+
+        // Ajustar offset de rolagem para mobile
+        window.scrollToSection = function (elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                const headerOffset = 50; // Menor offset para mobile
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        };
+
+        // Melhorar comportamento de toque nos cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('touchstart', function () {
+                this.classList.add('card-touch');
+            });
+
+            card.addEventListener('touchend', function () {
+                this.classList.remove('card-touch');
+            });
+        });
+    }
+
+    // Ajustar altura do hero para telas pequenas em landscape
+    function adjustHeroHeight() {
+        const hero = document.querySelector('.custom-hero');
+        if (hero && window.innerHeight < 500 && window.innerWidth > window.innerHeight) {
+            hero.style.minHeight = '130vh';
+        } else if (hero) {
+            hero.style.minHeight = '';
+        }
+    }
+
+    window.addEventListener('resize', adjustHeroHeight);
+    adjustHeroHeight();
+}); // Fechamento correto do DOMContentLoaded
+
+// Função para forçar a clicabilidade dos botões após o carregamento completo
+window.onload = function () {
+    console.log('Script de forçar clicabilidade executado');
+
+    // Forçar clicabilidade de todos os botões (sem o efeito de outline vermelho)
+    document.querySelectorAll('.btn').forEach(button => {
+        button.style.pointerEvents = 'auto';
+        button.style.cursor = 'pointer';
+    });
+
+    // Verificação específica para os botões problemáticos
+    const btnVerProjetos = document.getElementById('btn-ver-projetos');
+    const btnComecar = document.getElementById('btn-comecar');
+
+    if (btnVerProjetos) console.log('Botão Ver Projetos encontrado');
+    if (btnComecar) console.log('Botão Começar Agora encontrado');
+};
 
 // Função para pegar o pacote selecionado da URL
 function getPacoteFromURL() {
@@ -161,19 +277,4 @@ function revealOnScroll() {
 if (document.querySelectorAll('.fade-in').length > 0) {
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
-}
-
-// Função simplificada para scroll suave (usar com os botões onclick)
-function scrollToElement(elementId) {
-    const element = document.getElementById(elementId);
-    if (element) {
-        const headerOffset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-        });
-    }
 }

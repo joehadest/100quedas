@@ -55,7 +55,8 @@
 .card-img-wrapper {
     position: relative;
     overflow: hidden;
-    padding-top: 56.25%; /* Aspect ratio 16:9 */
+    padding-top: 56.25%;
+    /* Aspect ratio 16:9 */
 }
 
 .card-img-wrapper .card-img-top {
@@ -73,7 +74,7 @@
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Efeito de fade in para elementos */
@@ -110,7 +111,7 @@
     border-radius: 50%;
     text-align: center;
     font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -131,7 +132,7 @@
 
 #pacotes .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Ribbon para pacote mais popular */
@@ -239,7 +240,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     transform: rotate(45deg);
     animation: glow 3s infinite;
 }
@@ -267,9 +268,17 @@
     border-radius: 50%;
 }
 
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
 
 .code-content {
     padding: 20px;
@@ -301,7 +310,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(46,204,113,0.1), rgba(52,152,219,0.1));
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     animation: bgAnimation 15s ease infinite;
 }
@@ -321,7 +330,7 @@
 
 #servicos .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
 }
 
 #servicos .service-card i {
@@ -350,7 +359,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(46,204,113,0.2), rgba(52,152,219,0.2));
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.2), rgba(52, 152, 219, 0.2));
     opacity: 0;
     transition: all 0.3s ease;
 }
@@ -376,12 +385,12 @@
 
 #pacotes .card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1) !important;
 }
 
 .highlight-card {
     position: relative;
-    background: linear-gradient(45deg, rgba(46,204,113,0.05), rgba(52,152,219,0.05));
+    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
 }
 
 .highlight-card::before {
@@ -391,7 +400,7 @@
     border-radius: 20px;
     padding: 2px;
     background: linear-gradient(45deg, #2ecc71, #3498db);
-    -webkit-mask: 
+    -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
     mask:
@@ -417,7 +426,7 @@
     height: 100%;
     top: 0;
     left: -100%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: 0.5s;
 }
 
@@ -439,7 +448,8 @@
 }
 
 /* Garantir que os botões tenham área clicável em toda sua superfície */
-.pulse-button, .glow-button {
+.pulse-button,
+.glow-button {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -447,7 +457,8 @@
     text-align: center;
 }
 
-.pulse-button::before, .glow-button::before {
+.pulse-button::before,
+.glow-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -473,7 +484,8 @@
 /* Limpar efeitos que possam interferir na clicabilidade */
 .custom-hero .btn::before,
 .custom-hero .btn::after {
-    z-index: -1; /* Garantir que os pseudo-elementos não interfiram com cliques */
+    z-index: -1;
+    /* Garantir que os pseudo-elementos não interfiram com cliques */
 }
 
 .custom-hero .btn-primary {
@@ -490,7 +502,35 @@
 /* Remover classes que possam interferir */
 .custom-hero .pulse-button,
 .custom-hero .glow-button {
-    position: static; /* Reset posicionamento que pode causar problemas */
+    position: static;
+    /* Reset posicionamento que pode causar problemas */
+}
+
+/* Ajuste para os botões no hero */
+.custom-hero .btn {
+    position: relative;
+    z-index: 1000;
+    /* z-index alto para garantir que esteja acima de outros elementos */
+    cursor: pointer !important;
+    pointer-events: auto !important;
+}
+
+/* Garantindo que elementos animados não sobreponham os botões clicáveis */
+.animated-bg,
+.particle {
+    pointer-events: none;
+}
+
+/* Ajuste adicional para garantir que o texto e botões estejam acima de outros elementos */
+.custom-hero .position-relative.z-2 {
+    z-index: 100 !important;
+}
+
+/* Corrigindo possíveis problemas com a animação de texto */
+.animate-text {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 /* Animações globais */
@@ -520,30 +560,63 @@
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes glow {
-    0% { transform: rotate(45deg) translate(-100%, -100%); }
-    100% { transform: rotate(45deg) translate(100%, 100%); }
+    0% {
+        transform: rotate(45deg) translate(-100%, -100%);
+    }
+
+    100% {
+        transform: rotate(45deg) translate(100%, 100%);
+    }
 }
 
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes bgAnimation {
-    0%, 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-    50% { clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); }
+
+    0%,
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    }
 }
 
 @keyframes fadeInLeft {
@@ -565,5 +638,206 @@
     .custom-hero {
         min-height: 100vh;
         padding: 4rem 0;
+    }
+}
+
+/* Media queries para dispositivos móveis */
+
+/* Smartphones (até 576px) */
+@media (max-width: 576px) {
+
+    /* Hero Section ajustes */
+    .custom-hero {
+        min-height: 90vh;
+        padding: 2rem 0;
+    }
+
+    .custom-hero h1.display-1 {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
+
+    .custom-hero .lead {
+        font-size: 1rem;
+    }
+
+    /* Botões ajustados para mobile */
+    .custom-hero .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.75rem;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .custom-hero .d-flex.gap-3 {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Ajustes de espaçamento */
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* Ajustes para cards */
+    .portfolio-card .card-img-top {
+        height: 180px;
+    }
+
+    /* Ajustes para o WhatsApp float */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Pacotes em mobile */
+    #pacotes .card {
+        margin-bottom: 2rem;
+    }
+
+    #pacotes .card-body {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Highlight card não aumenta em mobile */
+    .highlight-card {
+        transform: none !important;
+    }
+
+    .highlight-card:hover {
+        transform: translateY(-10px) !important;
+    }
+
+    /* Ajustes de tipografia para mobile */
+    h2.display-5 {
+        font-size: 2rem;
+    }
+
+    /* Ajuste de animações para mobile */
+    .animated-bg {
+        display: none;
+        /* Simplifica visual no mobile */
+    }
+}
+
+/* Tablets (de 576px até 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .custom-hero h1.display-1 {
+        font-size: 3rem;
+    }
+
+    .custom-hero .lead {
+        font-size: 1.1rem;
+    }
+
+    /* Ajuste de layout para tablets */
+    .custom-hero .row.align-items-center {
+        padding-top: 2rem;
+    }
+
+    /* Cards mais equilibrados */
+    #pacotes .card-body {
+        min-height: auto;
+    }
+
+    /* Melhora na distribuição dos botões */
+    .custom-hero .btn {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Orientação paisagem em smartphones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .custom-hero {
+        min-height: 130vh;
+        /* Maior altura para orientação paisagem */
+    }
+
+    .custom-hero .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+/* Melhorias para todos os tamanhos de tela */
+@media (max-width: 992px) {
+
+    /* Melhorar espaçamento e hierarquia */
+    section {
+        overflow: hidden;
+    }
+
+    /* Ajuste para modais em telas menores */
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-body img {
+        margin-bottom: 1rem;
+    }
+
+    /* Tornar o footer mais compacto */
+    footer {
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    footer .social-links {
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+}
+
+/* Ajuste específico para a janela de código em mobile */
+@media (max-width: 768px) {
+    .code-window {
+        display: none;
+    }
+}
+
+/* Otimizações para telas muito pequenas */
+@media (max-width: 360px) {
+    .custom-hero h1.display-1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Correções para elementos específicos */
+@media (max-width: 768px) {
+
+    /* Corrigir sobreposição da fita "Mais Popular" */
+    .ribbon {
+        font-size: 0.7rem;
+        padding: 3px 30px;
+        right: -30px;
+        top: 15px;
+    }
+
+    /* Ajustar tamanho de ícones em mobile */
+    .service-card i.bi {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Ajustar z-index e visibilidade elementos em sobreposição */
+@media (max-width: 576px) {
+    .custom-hero .position-relative.z-2 {
+        z-index: 200 !important;
+    }
+
+    .custom-hero .btn {
+        z-index: 210 !important;
+        position: relative;
     }
 }
