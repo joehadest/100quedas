@@ -2,13 +2,31 @@
 
 /* Estilo para o card do pacote selecionado */
 .selected-package-card {
-    border-top: 5px solid var(--custom-primary);
+    border-top: 5px solid #0d6efd;
 }
 
 #pacoteInfo {
-    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
-    border-left: 4px solid var(--custom-primary);
+    background-color: #f8f9fa;
+    border-left: 4px solid #0d6efd;
     transition: all 0.3s ease;
+}
+
+#pacoteNome {
+    color: #0d6efd;
+}
+
+.package-features {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.package-features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.package-features li:last-child {
+    border-bottom: none;
 }
 
 /* Estilo para as tabs de pagamento */
@@ -45,7 +63,9 @@
 
 .qr-code-img {
     max-width: 100%;
-    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 /* Estilo para botões de cópia */
@@ -141,13 +161,16 @@
 
 /* Estilos para os itens de garantia */
 .guarantee-item {
+    height: 100%;
     padding: 15px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease;
 }
 
 .guarantee-item:hover {
-    background: linear-gradient(45deg, rgba(46, 204, 113, 0.05), rgba(52, 152, 219, 0.05));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para o accordion de FAQs */
@@ -185,6 +208,34 @@
 /* Estilo para textos de confirmação */
 #copySuccess {
     transition: all 0.3s ease;
+}
+
+.payment-section {
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+#pix-valor-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Animações */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsividade */

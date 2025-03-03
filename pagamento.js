@@ -82,37 +82,41 @@ function loadPackageDetails(pacote) {
     const pacoteInfo = {
         basico: {
             nome: "Pacote Básico",
-            preco: "R$ 699,00",
+            preco: "R$ 100,00",
             detalhes: [
-                "Landing Page",
-                "Design Responsivo",
-                "SEO Básico",
-                "Entrega em 7 dias"
+                "Site de 3 a 5 páginas",
+                "Design responsivo",
+                "Formulário de contato",
+                "Otimização para SEO básica",
+                "Entrega em até 7 dias"
             ]
         },
         profissional: {
             nome: "Pacote Profissional",
-            preco: "R$ 1.499,00",
+            preco: "R$ 200,00",
             detalhes: [
-                "Até 5 Páginas",
-                "Design Personalizado",
-                "SEO Avançado",
-                "Formulário de Contato",
-                "Integração com Redes Sociais",
-                "Entrega em 15 dias"
+                "Site de 5 a 10 páginas",
+                "Design personalizado e responsivo",
+                "Blog integrado",
+                "Formulários avançados",
+                "SEO otimizado",
+                "Integração com redes sociais",
+                "Entrega em até 15 dias"
             ]
         },
         premium: {
             nome: "Pacote Premium",
-            preco: "R$ 2.499,00",
+            preco: "R$ 300,00",
             detalhes: [
-                "Até 10 Páginas",
-                "Design Premium",
-                "SEO Completo",
-                "Área Administrativa",
-                "Blog Integrado",
-                "Sistema de Newsletter",
-                "Entrega em 30 dias"
+                "Site completo com até 20 páginas",
+                "Design premium exclusivo",
+                "Sistema de blog avançado",
+                "Área de membros",
+                "Otimização SEO avançada",
+                "Integração com sistemas de pagamento",
+                "Treinamento de administração do site",
+                "Suporte prioritário por 30 dias",
+                "Entrega em até 30 dias"
             ]
         }
     };
