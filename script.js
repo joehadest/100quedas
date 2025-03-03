@@ -19,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Inicializar o portfólio se o script estiver carregado
+    if (window.PortfolioManager && typeof window.PortfolioManager.renderProjects === 'function') {
+        window.PortfolioManager.renderProjects();
+    } else {
+        // Carregar o script de portfólio dinamicamente se não estiver disponível
+        const script = document.createElement('script');
+        script.src = 'js/portfolio-projects.js';
+        script.onload = function () {
+            if (window.PortfolioManager) {
+                window.PortfolioManager.renderProjects();
+            }
+        };
+        document.head.appendChild(script);
+    }
+
     // Função para rolagem suave - Implementação única e simplificada
     function scrollToSection(elementId) {
         const element = document.getElementById(elementId);
@@ -68,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Melhorar o comportamento de scroll para links internos
-    /*
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -87,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-    */
+
 
     // Animação de reveal ao scroll com Intersection Observer
     const observer = new IntersectionObserver((entries) => {

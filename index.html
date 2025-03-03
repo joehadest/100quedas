@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>100 Quedas | Desenvolvimento Web</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -106,9 +115,10 @@ const site = new Website({
     <section id="portfolio" class="py-5 fade-in">
         <div class="container">
             <h2 class="display-5 text-center mb-5">Demos</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6">
-                    <div class="card portfolio-card h-100 border-0 shadow-sm fade-in">
+            <div class="row g-4 justify-content-center" id="portfolio-container">
+                <!-- Cardápio Digital -->
+                <div class="col-md-4 mb-4 portfolio-card fade-in">
+                    <div class="card h-100 border-0 shadow-sm">
                         <div class="card-img-wrapper overflow-hidden">
                             <img src="./imgs/cardapio-digital.png" class="card-img-top" alt="Cardápio Digital"
                                 loading="lazy">
@@ -118,11 +128,13 @@ const site = new Website({
                             <p class="card-text">Sistema completo de cardápio digital com autenticação de usuários e
                                 MongoDB</p>
                             <div class="mb-3">
-                                <span class="badge bg-primary me-1">Node.js</span>
-                                <span class="badge bg-secondary me-1">Express</span>
-                                <span class="badge bg-success me-1">MongoDB</span>
-                                <span class="badge bg-info">RESTful API</span>
+                                <span class="badge bg-primary me-1 mb-1">Node.js</span>
+                                <span class="badge bg-secondary me-1 mb-1">Express</span>
+                                <span class="badge bg-success me-1 mb-1">MongoDB</span>
+                                <span class="badge bg-info mb-1">RESTful API</span>
                             </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="https://cardapio-digital-teste.vercel.app/#" class="btn btn-outline-primary"
                                     target="_blank">Ver Demo</a>
@@ -134,8 +146,10 @@ const site = new Website({
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card portfolio-card h-100 border-0 shadow-sm fade-in">
+
+                <!-- Barbearia Style -->
+                <div class="col-md-4 mb-4 portfolio-card fade-in">
+                    <div class="card h-100 border-0 shadow-sm">
                         <div class="card-img-wrapper overflow-hidden">
                             <img src="./imgs/barbearia-style.png" class="card-img-top" alt="Barbearia Style">
                         </div>
@@ -144,17 +158,50 @@ const site = new Website({
                             <p class="card-text">Sistema de agendamento online para barbearia com integração WhatsApp
                             </p>
                             <div class="mb-3">
-                                <span class="badge bg-primary me-1">HTML5</span>
-                                <span class="badge bg-secondary me-1">CSS3</span>
-                                <span class="badge bg-success me-1">JavaScript</span>
-                                <span class="badge bg-info me-1">Bootstrap 5</span>
-                                <span class="badge bg-warning">WhatsApp API</span>
+                                <span class="badge bg-primary me-1 mb-1">HTML5</span>
+                                <span class="badge bg-secondary me-1 mb-1">CSS3</span>
+                                <span class="badge bg-success me-1 mb-1">JavaScript</span>
+                                <span class="badge bg-info me-1 mb-1">Bootstrap 5</span>
+                                <span class="badge bg-warning mb-1">WhatsApp API</span>
                             </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
                             <div class="d-flex justify-content-between align-items-center">
                                 <a href="https://barbeariastyle.netlify.app/" class="btn btn-outline-primary"
                                     target="_blank">Ver Demo</a>
                                 <a href="#" class="btn btn-link text-decoration-none" data-bs-toggle="modal"
                                     data-bs-target="#barbeariaModal">
+                                    Detalhes <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lava Rápido -->
+                <div class="col-md-4 mb-4 portfolio-card fade-in">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-img-wrapper overflow-hidden">
+                            <!-- Updated image path - using main image instead of nested folder -->
+                            <img src="./imgs/lava-rapido.png" class="card-img-top" alt="Lava Rápido">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lava Rápido</h5>
+                            <p class="card-text">Site completo para serviço de lava rápido com sistema de agendamento
+                                online, catálogo de serviços e avaliações de clientes.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1 mb-1">React</span>
+                                <span class="badge bg-secondary me-1 mb-1">CSS Avançado</span>
+                                <span class="badge bg-success me-1 mb-1">Sistema de Agendamento</span>
+                                <span class="badge bg-info mb-1">Responsivo</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="https://lava-rapido.vercel.app/" class="btn btn-outline-primary"
+                                    target="_blank">Ver Demo</a>
+                                <a href="#" class="btn btn-link text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#lavaRapidoModal">
                                     Detalhes <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
@@ -269,6 +316,59 @@ const site = new Website({
         </div>
     </div>
 
+    <!-- Modal Lava Rápido -->
+    <div class="modal fade" id="lavaRapidoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Lava Rápido - Detalhes do Projeto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="./imgs/lava-rapido.png" class="img-fluid rounded mb-4" alt="Lava Rápido">
+
+                    <h6 class="fw-bold mb-3">Funcionalidades Principais</h6>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item">✓ Sistema de agendamento online</li>
+                        <li class="list-group-item">✓ Catálogo de serviços interativo</li>
+                        <li class="list-group-item">✓ Sistema de avaliações de clientes</li>
+                        <li class="list-group-item">✓ Interface responsiva e moderna</li>
+                        <li class="list-group-item">✓ Animações e transições avançadas</li>
+                    </ul>
+
+                    <h6 class="fw-bold mb-3">Tecnologias Utilizadas</h6>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>React</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>CSS Avançado</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>JavaScript ES6+</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sistema de Agendamento</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Design Responsivo</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Animações Personalizadas
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h6 class="fw-bold mb-3">Destaques do Projeto</h6>
+                    <p>Site completo para serviços de lava rápido desenvolvido com React e CSS avançado.
+                        Implementa um sistema de agendamento online intuitivo, catálogo de serviços interativo e
+                        sistema de avaliações de clientes. Interface moderna com animações e transições personalizadas.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <a href="https://lava-rapido.vercel.app/" class="btn btn-primary" target="_blank">Visitar Demo</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Pacotes -->
     <section id="pacotes" class="py-5 fade-in">
         <div class="container">
@@ -280,7 +380,7 @@ const site = new Website({
                         <div class="card-body text-center position-relative">
                             <div class="ribbon">Mais Popular</div>
                             <h3 class="card-title">Básico</h3>
-                            <div class="display-6 my-3">R$ 699</div>
+                            <div class="display-6 my-3">R$ 100</div>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Landing Page</li>
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Responsivo</li>
@@ -298,7 +398,7 @@ const site = new Website({
                         <div class="card-body text-center">
                             <div class="ribbon">Mais Popular</div>
                             <h3 class="card-title">Profissional</h3>
-                            <div class="display-6 my-3">R$ 1.499</div>
+                            <div class="display-6 my-3">R$ 200</div>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Até 5 Páginas</li>
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Personalizado
@@ -320,7 +420,7 @@ const site = new Website({
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body text-center">
                             <h3 class="card-title">Premium</h3>
-                            <div class="display-6 my-3">R$ 2.499</div>
+                            <div class="display-6 my-3">R$ 300</div>
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Até 10 Páginas</li>
                                 <li class="mb-2"><i class="bi bi-check-lg text-primary me-2"></i>Design Premium</li>
@@ -371,6 +471,7 @@ const site = new Website({
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="js/portfolio-projects.js"></script>
 </body>
 
 </html>
