@@ -1,13 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Carregar dados do pacote selecionado
-    const urlParams = new URLSearchParams(window.location.search);
-    const pacote = urlParams.get('pacote');
-
-    if (pacote) {
-        loadPackageDetails(pacote);
-    } else {
-        window.location.href = 'index.html'; // Redirecionar se não houver pacote selecionado
-    }
+    // Carregar dados do pacote único
+    loadPackageDetails();
 
     // Ativar tabs de pagamento
     const triggerTabList = [].slice.call(document.querySelectorAll('#paymentTabs button'));
@@ -44,23 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (tab) tab.click();
     }
 
-    // Atualizar QR code com base no pacote selecionado
+    // Atualizar QR code - simplificado para apenas um pacote
     const qrCodeImg = document.querySelector('.qr-code-img');
-    if (qrCodeImg && pacote) {
-        switch (pacote) {
-            case 'basico':
-                qrCodeImg.src = 'imgs/qr-pix.png';
-                break;
-            case 'profissional':
-                qrCodeImg.src = 'imgs/qr-profissional-pix.png';
-                break;
-            case 'premium':
-                qrCodeImg.src = 'imgs/qr-premium-pix.png';
-                break;
-            default:
-                qrCodeImg.src = 'imgs/qr-pix.png';
-                break;
-        }
+    if (qrCodeImg) {
+        qrCodeImg.src = 'imgs/qrcode-pix.png';
     }
 
     // Configurar dados de PIX
@@ -78,83 +58,49 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Função para carregar detalhes do pacote
-function loadPackageDetails(pacote) {
+function loadPackageDetails() {
     const pacoteInfo = {
-        basico: {
-            nome: "Pacote Básico",
-            preco: "R$ 100,00",
-            detalhes: [
-                "Site de 3 a 5 páginas",
-                "Design responsivo",
-                "Formulário de contato",
-                "Otimização para SEO básica",
-                "Entrega em até 7 dias"
-            ]
-        },
-        profissional: {
-            nome: "Pacote Profissional",
-            preco: "R$ 200,00",
-            detalhes: [
-                "Site de 5 a 10 páginas",
-                "Design personalizado e responsivo",
-                "Blog integrado",
-                "Formulários avançados",
-                "SEO otimizado",
-                "Integração com redes sociais",
-                "Entrega em até 15 dias"
-            ]
-        },
-        premium: {
-            nome: "Pacote Premium",
-            preco: "R$ 300,00",
-            detalhes: [
-                "Site completo com até 20 páginas",
-                "Design premium exclusivo",
-                "Sistema de blog avançado",
-                "Área de membros",
-                "Otimização SEO avançada",
-                "Integração com sistemas de pagamento",
-                "Treinamento de administração do site",
-                "Suporte prioritário por 30 dias",
-                "Entrega em até 30 dias"
-            ]
-        }
+        nome: "Pacote Completo",
+        preco: "R$ 1200,00",
+        detalhes: [
+            "Site completo com até 10 páginas",
+            "Design premium exclusivo",
+            "SEO Completo",
+            "Área Administrativa",
+            "Blog Integrado",
+            "Formulário de Contato",
+            "Integração com Redes Sociais",
+            "Sistema de Newsletter",
+            "Entrega em até 30 dias"
+        ]
     };
 
-    // Verificar se o pacote existe
-    if (pacoteInfo[pacote]) {
-        const info = pacoteInfo[pacote];
-        document.getElementById('pacoteNome').textContent = info.nome;
-        document.getElementById('pacotePreco').textContent = info.preco;
+    document.getElementById('pacoteNome').textContent = pacoteInfo.nome;
+    document.getElementById('pacotePreco').textContent = pacoteInfo.preco;
 
-        // Limpar e preencher detalhes
-        const detalhesElement = document.getElementById('pacoteDetalhes');
-        detalhesElement.innerHTML = '';
+    // Limpar e preencher detalhes
+    const detalhesElement = document.getElementById('pacoteDetalhes');
+    detalhesElement.innerHTML = '';
 
-        const ul = document.createElement('ul');
-        ul.className = 'list-unstyled';
+    const ul = document.createElement('ul');
+    ul.className = 'list-unstyled';
 
-        info.detalhes.forEach(detalhe => {
-            const li = document.createElement('li');
-            li.className = 'mb-2';
-            li.innerHTML = `<i class="bi bi-check-lg text-primary me-2"></i>${detalhe}`;
-            ul.appendChild(li);
-        });
+    pacoteInfo.detalhes.forEach(detalhe => {
+        const li = document.createElement('li');
+        li.className = 'mb-2';
+        li.innerHTML = `<i class="bi bi-check-lg text-primary me-2"></i>${detalhe}`;
+        ul.appendChild(li);
+    });
 
-        detalhesElement.appendChild(ul);
+    detalhesElement.appendChild(ul);
 
-        // Ajustar link do WhatsApp
-        const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me"]');
-        whatsappLinks.forEach(link => {
-            if (link.href.includes('?text=')) {
-                link.href += ` ${info.nome} (${info.preco})`;
-            }
-        });
-
-    } else {
-        // Pacote não encontrado, redirecionar
-        window.location.href = 'index.html';
-    }
+    // Ajustar link do WhatsApp
+    const whatsappLinks = document.querySelectorAll('a[href^="https://wa.me"]');
+    whatsappLinks.forEach(link => {
+        if (link.href.includes('?text=')) {
+            link.href += ` ${pacoteInfo.nome} (${pacoteInfo.preco})`;
+        }
+    });
 }
 
 // Função para formatar número do cartão

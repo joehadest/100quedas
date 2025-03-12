@@ -15,20 +15,10 @@ const client = new MercadoPagoConfig({
 
 const payment = new Payment(client);
 
-// Mapeamento de pacotes e valores
-const PACOTES = {
-    basico: {
-        valor: 699,
-        nome: "Pacote Básico"
-    },
-    profissional: {
-        valor: 1499,
-        nome: "Pacote Profissional"
-    },
-    premium: {
-        valor: 2499,
-        nome: "Pacote Premium"
-    }
+// Mapeamento simplificado para único pacote
+const PACOTE_INFO = {
+    valor: 1200,
+    nome: "Pacote Completo"
 };
 
 // Log para debug
@@ -40,18 +30,11 @@ app.use((req, res, next) => {
 // Rota para criar pagamento PIX
 app.post('/criar-pix', async (req, res) => {
     try {
-        const { pacote } = req.body;
-        const pacoteInfo = PACOTES[pacote];
-
-        if (!pacoteInfo) {
-            return res.status(400).json({ error: 'Pacote inválido' });
-        }
-
-        console.log('Criando PIX para:', pacoteInfo);
+        console.log('Criando PIX para:', PACOTE_INFO);
 
         const paymentData = {
-            transaction_amount: pacoteInfo.valor,
-            description: `${pacoteInfo.nome} - 100 Quedas Web`,
+            transaction_amount: PACOTE_INFO.valor,
+            description: `${PACOTE_INFO.nome} - 100 Quedas Web`,
             payment_method_id: 'pix',
             payer: {
                 email: 'cliente@email.com',
@@ -71,7 +54,7 @@ app.post('/criar-pix', async (req, res) => {
             id: result.id,
             qr_code: result.point_of_interaction.transaction_data.qr_code,
             qr_code_base64: result.point_of_interaction.transaction_data.qr_code_base64,
-            valor: pacoteInfo.valor
+            valor: PACOTE_INFO.valor
         });
     } catch (error) {
         console.error('Erro:', error);
