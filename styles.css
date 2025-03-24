@@ -201,9 +201,7 @@
     background: linear-gradient(45deg, #2ecc71, #3498db);
     -webkit-background-clip: text;
     background-clip: text;
-    background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 /* Animações de texto */
@@ -338,6 +336,7 @@
 #servicos .service-card i {
     background: linear-gradient(45deg, #2ecc71, #3498db);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 3rem;
 }
@@ -945,4 +944,33 @@
 #portfolio-container .portfolio-card {
     display: block !important;
     opacity: 1 !important;
+}
+
+/* Logo styles */
+.site-logo {
+    transition: all 0.3s ease;
+}
+
+.site-logo img {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+}
+
+.footer-logo img {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover img {
+    opacity: 1;
+}
+
+/* Media queries for logo responsiveness */
+@media (max-width: 576px) {
+    .site-logo img {
+        max-height: 60px !important;
+    }
+
+    .footer-logo img {
+        max-height: 40px !important;
+    }
 }
